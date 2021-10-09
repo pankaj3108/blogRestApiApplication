@@ -31,13 +31,44 @@ URL: http://localhost:8081/blogApplication/posts/users/{id}
 method: POST
 URL: http://localhost:8081/blogApplication/addUser
 
+Request Body :
+{
+    "userId" : ${userId},
+    "firstName" : ${firstName},
+    "lastName" : ${lastName},
+    "gender" : ${true/false}, /* true - male, false - female */
+    "email" : ${email ID},
+    "streetName" : ${street Name},
+    "city" : ${city},
+    "state" : ${state},
+    "country" : ${country},
+    "premiumUser" : ${true/false}, /* true - is premium user, false - not a premium user */
+    "dateOfBirth" : ${date of birth}
+}
+
 ** To add a post in the database by a user already registered
 method: POST
 URL: http://localhost:8081/blogApplication/addPost/{userid}
 
+Request Body:
+{
+    "postId" : ${postId},
+    "title" : ${title},
+    "description" : ${description},
+    "body" : ${body of the post},
+    "type" : ${TECH/FASHION/EDUCATION/ADVENTURE}
+}
+
 ** To add comment in a post
 method: POST
 URL: http://localhost:8081/blogApplication/posts/{id}/comment
+
+Request Body :
+{
+    "commentId" : ${commentId},
+    "userId" : ${userID},
+    "text" : ${comment body}
+}
 
 ** To retrieve comments of a certain post
 method: GET
@@ -46,6 +77,21 @@ URL: http://localhost:8081/blogApplication/posts/{id}/comments
 ** To update user profile
 method: PUT
 URL: http://localhost:8081/blogApplication/users/user/{id}
+
+Request Body :
+{
+    "userId" : ${userId},
+    "firstName" : ${firstName},
+    "lastName" : ${lastName},
+    "gender" : ${true/false}, /* true - male, false - female */
+    "email" : ${email ID},
+    "streetName" : ${street Name},
+    "city" : ${city},
+    "state" : ${state},
+    "country" : ${country},
+    "premiumUser" : ${true/false}, /* true - is premium user, false - not a premium user */
+    "dateOfBirth" : ${date of birth}
+}
 
 ** To delete a post 
 method: DELETE
